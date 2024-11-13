@@ -2,7 +2,6 @@
 
 
 
-
 ### GET ALL
 GET {{URL}}
 
@@ -19,6 +18,17 @@ Content-Type: application/json
     "number": 12345,
     "balance": 1000,
     "specialLimit": 1000
+}
+
+### 
+POST {{URL}}
+Content-Type: application/json
+
+{
+    "name": "Juca Silva",
+    "number": 11111,
+    "balance": 9000,
+    "specialLimit": 3000
 }
 
 ### CREATE
