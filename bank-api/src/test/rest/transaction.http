@@ -27,6 +27,6 @@ POST {{URL}}/deposit
 Content-Type: application/json
 
 {
-    "receiverAccountNumber": 12346,
-    "amount": 200000
+    "receiverAccountNumber": 12345,
+    "amount": 200
 }
