@@ -1,5 +1,7 @@
 package br.com.aula.leilao.login;
 
+import java.util.function.BooleanSupplier;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -33,5 +35,20 @@ public class LoginPage {
         this.browser.findElement(By.id("button-submit")).click();
     }
 
-    
+    public boolean estaNaPaginaDeLeiloes() {
+        return browser.getCurrentUrl().equals(URL_LEILOES);
+    }
+
+    public String getNomeUsuarioLogado() {
+        return browser.findElement(By.id("usuario-logado"))
+                .getText();
+    }
+
+    public boolean estaNaPaginaDeLogin() {
+        return browser.getCurrentUrl().contains(URL_LOGIN);
+    }
+
+    public boolean contemTexto(String string) {
+        return browser.getPageSource().contains(string);
+    }
 }
