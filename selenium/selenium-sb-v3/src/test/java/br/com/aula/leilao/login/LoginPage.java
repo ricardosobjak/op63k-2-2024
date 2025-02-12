@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import br.com.aula.leilao.leiloes.CadastroLeilaoPage;
+
 public class LoginPage {
     public static final String URL_LOGIN = "http://localhost:8080/login";
     public static final String URL_LEILOES = "http://localhost:8080/leiloes";
@@ -50,5 +52,10 @@ public class LoginPage {
 
     public boolean contemTexto(String string) {
         return browser.getPageSource().contains(string);
+    }
+
+    public CadastroLeilaoPage abrirPaginaDeCadastroLeilao() {
+        browser.navigate().to(URL_LEILOES + "/new");
+        return new CadastroLeilaoPage(browser);
     }
 }
